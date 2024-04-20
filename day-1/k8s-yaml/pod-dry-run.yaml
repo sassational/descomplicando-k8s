@@ -1,0 +1,20 @@
+# Configuração em .YAML do Pod criado com o comando:
+# kubectl run --image nginx --port 80 sassational --dry-run=client -o yaml > pod-dry-run.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: sassational
+  name: sassational
+spec:
+  containers:
+  - image: nginx
+    name: sassational
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
