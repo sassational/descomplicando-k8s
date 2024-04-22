@@ -13,3 +13,5 @@ Mas então, uma Pod deve executar todos os recursos de uma aplicação? O Front,
 
 * A comunicação entre dois conteineres dentro de uma Pod se dá através do endereçamento de rede local, ou **localhost**.
 * A comunicação entre duas Pods distintas se dá através do endereçamento de IP.
+* O **HostIP** presente nas Pods, se refere ao IP do Node qual a Pod está hospedada no Cluster.
+* O **PodIP** presente nas Pods, se refere ao IP da Pod dentro do Cluster.
