@@ -10,3 +10,7 @@ A criação de ReplicaSets avulsas dos Deployments é possível, porém não mui
 Conforme ocorrem alterações nos Deployments, são criados novos ReplicaSets para subrir as alterações feitas nas especificações das Pods. Conforme cada atualização é feita, novos ReplicaSets vão sendo criados.
 Caso ocorra um Rollback, o Deployment irá referenciar o ReplicaSet antigo e, dessa forma retornando as configurações das Pods pré Rollout.
 O ReplicaSet em resumo é subalterno ao Deployment e gerenciado por ele, mas ele quem cuida do estado e quantidade das Pods, sendo o estado orientado pelo Deployment.
+
+# DaemonSets
+
+É um controlador de Pods, assim como o ReplicaSet, porém que trabalha de uma forma diferente do ReplicaSet. O DaemonSet é responsável por garantir que pelo menos uma réplica do conjunto estará rodando em cada um dos nós, é um recurso muito bom para utilização de Agents de monitoramento, como Datadog, NewRelic e Prometheus, além de ferramentas de segurança, como Falco, outra usabilidade é para realização de Proxy de Rede em todos os Nodes do Cluster. Em resumo, DaemonSets são uma forma de garantir que terá um Pod rodando em cada Node de um Cluster.
