@@ -30,3 +30,21 @@ Quando estamos pensando em um cluster Kubernetes, precisamos lembrar que a princ
 **Kops**: É uma ferramenta para implantar e gerenciar clusters Kubernetes na nuvem. Ele foi projetado especificamente para implantação em nuvens públicas como AWS, GCP e Azure. Kops permite criar, atualizar e gerenciar clusters Kubernetes na nuvem. Algumas das principais vantagens do uso do Kops são a personalização, escalabilidade e segurança. No entanto, o uso do Kops pode ser mais complexo do que outras opções de instalação do Kubernetes, especialmente se você não estiver familiarizado com a nuvem em que está implantando.
 
 **Minikube e Kind**: São ferramentas que permitem criar um cluster Kubernetes localmente, em um único nó. São úteis para testar e aprender sobre o Kubernetes, pois você pode criar um cluster em poucos minutos e começar a implantar aplicativos imediatamente. Elas também são úteis para pessoas desenvolvedoras que precisam testar suas aplicações em um ambiente Kubernetes sem precisar configurar um cluster em um ambiente de produção.
+
+## Recomendações de Cluster
+
+1- Mínimo 2GB de RAM para Node de Worker. Se o Control Plane estiver sozinho, o Node dele necessitará ter 3GB de RAM.
+
+2- Mínimo de 2CPUs para o Node.
+
+3- O Node necesitará ter Placa de Rede para permitir a comunicação entre nós.
+
+4- Linux é essencial estar disponível na máquina.
+
+4- As portas 6443 (porta da API do K8s) necessitam estar liberadas.
+
+5- As portas 10250 até 10259 (porta do kubelet) precisam estar liberadas também.
+
+6- As portas altas 30000 até 32767 (porta do NodePort) precisam estar liberadas também.
+
+7- As portas 2379 e 2380 (portas do ETCD) precisam estar liberadas também, caso o Control Plane possua mais de um Node.
