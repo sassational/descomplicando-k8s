@@ -24,6 +24,20 @@ locals {
       cidr_blocks = "0.0.0.0/0"
     },
     {
+      from_port   = 6783
+      to_port     = 6784
+      protocol    = "tcp"
+      description = "WeaveNet Port TCP"
+      cidr_blocks = "0.0.0.0/0"
+    },
+    {
+      from_port   = 6783
+      to_port     = 6784
+      protocol    = "udp"
+      description = "WeaveNet Port UDP"
+      cidr_blocks = "0.0.0.0/0"
+    },
+    {
       from_port   = 2379
       to_port     = 2380
       protocol    = "tcp"
