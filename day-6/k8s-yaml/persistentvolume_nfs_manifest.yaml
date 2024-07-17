@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    storage: nfs
+  name: sassational-pv-nfs
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 172.19.23.186
+    path: "/mnt/nfs"
+  storageClassName: sassational-sc
