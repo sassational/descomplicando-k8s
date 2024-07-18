@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-port-nginx
+  labels:
+    app: sassational-ginx
+spec:
+  selector:
+      app: sassational-nginx
+  ports:
+    - port: 80
+      name: http
+      targetPort: 80
+      nodePort: 32000
+  type: NodePort
