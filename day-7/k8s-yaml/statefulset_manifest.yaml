@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: nginx
+  labels:
+    app: sassational-nginx
+spec:
+  serviceName: sassational-nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sassational-nginx
+  template:
+    metadata:
+      labels:
+        app: sassational-nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+              name: http
+          volumeMounts:
+            - name: nginx-persistent-storage
+              mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+    - metadata:
+        name: nginx-persistent-storage
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+
