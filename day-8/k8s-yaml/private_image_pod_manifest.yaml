@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sassational-pod
+spec:
+  containers:
+  - name: sassational-container
+    image: sassational/private-image
+  imagePullSecrets:
+  - name: docker-hub-secret
